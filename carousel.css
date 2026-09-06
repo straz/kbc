@@ -1,0 +1,99 @@
+/* ── Picture carousel (same widgets as ~/src/longreach) ── */
+.carousel {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 350ms ease;
+}
+
+.carousel-track .card {
+  flex: 0 0 100%;
+  min-width: 0;
+  aspect-ratio: 9 / 10;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.carousel-track .card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.carousel-btn {
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #666;
+  background: none;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  color: #333;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.carousel-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.carousel-dot:hover {
+  background: #666;
+}
+
+.carousel-dot.active {
+  background: #666;
+  cursor: default;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

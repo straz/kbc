@@ -1,0 +1,23 @@
+{%- comment -%}
+Shared picture carousel. Slides are every file in pix/.
+Navigation is wired up by carousel.js: prev/next buttons, dots,
+left/right arrow keys, and clicking the picture.
+{%- endcomment -%}
+{%- assign photos = site.static_files | where_exp: "f", "f.path contains '/pix/'" -%}
+<section class="carousel" aria-roledescription="carousel" aria-label="{{ include.label | default: 'Pictures' }}">
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      {%- for photo in photos %}
+      <div class="card">
+        <img src="{{ photo.path | relative_url }}" alt="">
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button type="button" class="carousel-btn carousel-prev" aria-label="Previous picture">&#9664;</button>
+    <span class="carousel-dots" aria-hidden="true"></span>
+    <button type="button" class="carousel-btn carousel-next" aria-label="Next picture">&#9654;</button>
+  </div>
+  <span class="visually-hidden carousel-status" aria-live="polite"></span>
+</section>

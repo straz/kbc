@@ -1,0 +1,31 @@
+title: Knits by Clare
+tagline: Handmade knitwear
+url: "https://www.knitsbyclare.com"
+
+# Build settings
+markdown: kramdown
+theme: null
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Directories
+source: .
+destination: ./_site
+includes_dir: _includes
+layouts_dir: _layouts
+
+# Plugins (safe for GitHub Actions)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .github
+  - vendor
